@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receipt</title>
+    <link rel="stylesheet" href="./style.css" id="style1" />
+    <script src="./script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="./html2canvas.js"></script>
+
+</head>
+
+<body>
+    <div class="grad">
+        <div class="heading" style="user-select: none;">Royal Bag Center</div>
+        <input type="checkbox" id="active">
+        <label for="active" class="menu-btn"><span></span></label>
+        <label for="active" class="close"></label>
+        <div class="wrapper">
+            <ul>
+                <li><a href="records.html" style="user-select: none;">Records</a></li>
+                <li><a href="ledger.html" style="user-select: none;">Ledger</a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+            </ul>
+        </div>
+    </div>
+    <div style="user-select: none;">
+        To <input type="text" id="firm" style="margin-top: 120px;" /><br>
+        Contact <input type="number" id="phone" style="position: relative; margin-top:10px" />
+    </div>
+
+    </div>
+    <table
+        style="position:relative; margin-top:50px;height: 90px; width: 280px; border-collapse: collapse; border-style: solid;"
+        border="1" id="tbl">
+        <tr>
+            <th style="width: auto; user-select: none;">
+                Item
+            </th>
+            <th style="width: auto; user-select: none;">
+                Rate
+            </th>
+            <th style="width: auto; user-select: none;">
+                Quantity
+            </th>
+            <th style="width: 20px; user-select: none;">
+                Sum
+            </th>
+        </tr>
+        <tr style="height: 18px;">
+            <td style="height: 18px;">
+                <input list="maal" id="100" style="width: 100px; user-select: none;">
+                <datalist id="maal">
+                    <option value="School Bag">School Bag</option>
+                    <option value="Duffel">Duffel</option>
+                    <option value="Theli">Theli</option>
+                    <option value="Hara Jhola 3">Hara Jhola 3 No</option>
+                    <option value="Hara Jhola 4">Hara Jhola 4 No</option>
+                    <option value="Hara Jhola 5">Hara Jhola 5 No</option>
+                    <option value="Hara Jhola 6">Hara Jhola 6 No</option>
+                    <option value="Hara Jhola 7">Hara Jhola 7 No</option>
+                    <option value="Hara Jhola 8">Hara Jhola 8 No</option>
+                    <option value="Hara Jhola 9">Hara Jhola 9 No</option>
+                    <option value="Kala Jhola 3">Kala Jhola 3 No</option>
+                    <option value="Kala Jhola 4">Kala Jhola 4 No</option>
+                    <option value="Kala Jhola 5">Kala Jhola 5 No</option>
+                    <option value="Kala Jhola 6">Kala Jhola 6 No</option>
+                    <option value="Kala Jhola 7">Kala Jhola 7 No</option>
+                    <option value="Kala Jhola 8">Kala Jhola 8 No</option>
+                    <option value="Kala Jhola 9">Kala Jhola 9 No</option>
+                </datalist>
+            </td>
+            <td style="width: 20%; height: 18px;"><input type="number" id="1" style="width: 100px;"
+                    oninput="showQty(); showSum();" /></td>
+            <td style="width: 20%; height: 18px;"><input type="number" id="2" style="width: 100px;" onchange="showSum()"
+                    oninput="showQty(); showSum();" /></td>
+            <td class="1"></td>
+        </tr>
+        <tr style="height: 18px;">
+            <td style="width: 50%; height: 18px;">
+                <input list="maal" id="300" style="width: 100px;" onchange="showSum()">
+
+            </td>
+            <td style="width: 25%; height: 18px;"><input type="number" id="3" style="width: 100px;"
+                    oninput="showSum()" /></td>
+            <td style="width: 25%; height: 18px;"><input type="number" id="4" style="width: 100px;"
+                    oninput="showQty(); showSum()" /></td>
+            <td class="3"></td>
+        </tr>
+        <tr style="height: 18px;">
+            <td style="width: 50%; height: 18px;">
+                <input list="maal" id="500" style="width: 100px;" onchange="showSum()">
+
+            </td>
+            <td style="width: 25%; height: 18px;"><input type="number" id="5" style="width: 100px;"
+                    onchange="showSum()" /></td>
+            <td style="width: 25%; height: 18px;"><input type="number" id="6" style="width: 100px;" onchange="showSum()"
+                    oninput="showQty(); showSum()" /></td>
+            <td class="5"></td>
+        </tr>
+        <tr style="height: 18px;">
+            <td style="width: 50%; height: 18px;">
+                <input list="maal" id="700" style="width: 100px;" onchange="showSum()">
+
+            </td>
+            <td style="width: 25%; height: 18px;"><input type="number" id="7" style="width: 100px;"
+                    onchange="showSum()" /></td>
+            <td style="width: 25%; height: 18px;"><input type="number" id="8" style="width: 100px;" onchange="showSum()"
+                    oninput="showQty(); showSum()" /></td>
+            <td class="7"></td>
+        </tr>
+        <tr style="height: 18px;">
+            <td style="width: 50%; height: 18px;">
+                <input list="maal" id="900" style="width: 100px;" onchange="showSum()">
+            </td>
+            <td style="width: 25%; height: 18px;"><input type="number" id="9" style="width: 100px;"
+                    onchange="showSum()" /></td>
+            <td style="width: 25%; height: 18px;"><input type="number" id="10" style="width: 100px;"
+                    onchange="showSum()" oninput="showQty(); showSum()" /></td>
+            <td class="9"></td>
+        </tr>
+        <tr style="height: 18px;">
+            <td style="width: 50%; height: 18px;">
+                <input list="maal" id="1100" style="width: 100px;" onchange="showSum()">
+            </td>
+            <td style="width: 25%; height: 18px;"><input type="number" id="11" style="width: 100px;"
+                    onchange="showSum()" /></td>
+            <td style="width: 25%; height: 18px;"><input type="number" id="12" style="width: 100px;"
+                    onchange="showSum()" oninput="showQty(); showSum()" /></td>
+            <td class="11"></td>
+        </tr>
+        <tr style="height: 18px;">
+            <td style="width: 50%; height: 18px;">
+                <input list="maal" id="1300" style=" width: 100px;" onchange="showSum()">
+            </td>
+            <td style="width: 25%; height: 18px;"><input type="number" id="13" style="width: 100px;"
+                    onchange="showSum()" /></td>
+            <td style="width: 25%; height: 18px;"><input type="number" id="14" style="width: 100px;"
+                    onchange="showSum()" oninput="showQty();showSum()" /></td>
+            <td class="13"></td>
+        </tr>
+        <tr style="height: 18px;">
+            <td style="width: 50%; height: 18px;">
+                <input list="maal" id="1500" style=" width: 100px;" onchange="showSum()">
+            </td>
+            <td style="width: 25%; height: 18px;"><input type="number" id="15" style="width: 100px;"
+                    onchange="showSum()" /></td>
+            <td style="width: 25%; height: 18px;"><input type="number" id="16" style="width: 100px;"
+                    onchange="showSum()" oninput="showQty(); showSum()" /></td>
+            <td class="15"></td>
+        </tr>
+        <tr style="height: 18px;">
+            <td style="width: 50%; height: 18px;">
+                <input list="maal" id="1700" style=" width: 100px;" onchange="showSum()">
+            </td>
+            <td style="width: 25%; height: 18px;"><input type="number" id="17" style="width: 100px;"
+                    onchange="showSum()" /></td>
+            <td style="width: 25%; height: 18px;"><input type="number" id="18" style="width: 100px;"
+                    onchange="showSum()" oninput="showQty();showSum()" /></td>
+            <td class="17"></td>
+        </tr>
+        <tr style="height: 18px;">
+            <td style="width: 50%; height: 18px;">
+                <input list="maal" id="1900" style="width: 100px;" onchange="showSum();">
+            </td>
+            <td style="width: 25%; height: 18px;"><input type="number" id="19" style="width: 100px;"
+                    onchange="showSum(); addRow();" /></td>
+            <td style="width: 25%; height: 18px;"><input type="number" id="20" style="width: 100px;"
+                    onchange="showSum()" oninput="showQty();showSum()" /></td>
+            <td class="19"></td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td style="width: 110px;"></td>
+            <td></td>
+            <td></td>
+            <td>
+                <div id="qtySum"></div>
+            </td>
+            <td></td>
+
+        </tr>
+        <tr>
+            <td>
+
+            </td>
+
+            <td>
+                <button onclick="addRow();" style="user-select: none;">Add more rows</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Print Receipt" class="btnfos btnfos-1" onclick="prtReciept();"
+                    style="user-select: none;" />
+            </td>
+
+        </tr>
+    </table>
+    <div id="graTotal" style="position:sticky; margin-left: 80%;background-color: cornsilk; margin-bottom:
+        200px;align-content: center;padding-left: 2%;padding-top: 3%;padding-bottom: 3%;padding-left: 3%;">
+    </div>
+
+    <div class="footer">
+        <span class="footercontents" style="user-select: none;">Mohammed Mhowwala. All rights reserved</span>
+    </div>
+
+</body>
+
+</html>
