@@ -1,0 +1,3 @@
+Flask==2.0.1
+escpos==3.0.0
+pybluez==0.23
