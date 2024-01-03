@@ -44,11 +44,7 @@ if my_printer:
     print_to_bluetooth_printer(my_printer,canvas_data )
 else:
     print("Printer connection failed.")
-        return render_template('index.html')
-
-    except Exception as e:
-        return str(e)
-
+    return render_template('index.html')
 if __name__ == '__main__':
     app.run(debug=True)
 
