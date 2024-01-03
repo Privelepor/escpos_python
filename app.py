@@ -15,15 +15,15 @@ def print_canvas():
         # Receive base64 data from script.js
         canvas_data = request.form['canvasData']
         def connect_to_printer(mac_address):
-    try:
-        # Establish a Bluetooth connection to the ESC/POS printer
-        conn = BluetoothConnection(mac_address)
-        printer = escpos.printer.File(escpos.printer.ESCPOS, conn)
-
-        return printer
-    except Exception as e:
-        print(f"Error connecting to the printer: {e}")
-        return None
+            try:
+                # Establish a Bluetooth connection to the ESC/POS printer
+                conn = BluetoothConnection(mac_address)
+                printer = escpos.printer.File(escpos.printer.ESCPOS, conn)
+                return printer
+                except Exception as e:
+                    print(f"Error connecting to the printer: {e}")
+                    return None
+                    
 
 def print_to_bluetooth_printer(printer, canvas_data):
     try:
